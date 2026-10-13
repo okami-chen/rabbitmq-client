@@ -38,7 +38,7 @@ func (r *RabbitMQConfig) Wait(timeout time.Duration) bool {
 
 func (r *RabbitMQConfig) Start(ctx context.Context, handles map[string][]ProcessorInterface) {
 	if r == nil || r.RabbitInfo == nil {
-		g.Log().Error(ctx, "rabbitmq client config is empty, nothing to start")
+		g.Log().Warning(ctx, "rabbitmq client config is empty, nothing to start")
 		return
 	}
 
